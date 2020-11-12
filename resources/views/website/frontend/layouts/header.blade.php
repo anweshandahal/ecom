@@ -12,7 +12,7 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{route('website.index')}}">Home</a></li>
                                     <li><a href="shop.html">shop</a></li>
                                     <li><a href="about.html">about</a></li>
                                     <li class="hot"><a href="#">Latest</a>
@@ -30,7 +30,7 @@
                                     <li><a href="#">Pages</a>
                                         <ul class="submenu">
                                             <li><a href="login.html">Login</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="{{url('/website/frontend/shop/shopping-cart')}}">Cart</a></li>
                                             <li><a href="elements.html">Element</a></li>
                                             <li><a href="confirmation.html">Confirmation</a></li>
                                             <li><a href="checkout.html">Product Checkout</a></li>
@@ -49,7 +49,7 @@
                                     </div>
                                 </li>
                                 <li> <a href="login.html"><span class="flaticon-user"></span></a></li>
-                                <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                                <li><a href="{{route('website.cart')}}"><span class="flaticon-shopping-cart">{{\Illuminate\Support\Facades\Session::has('cart')?\Illuminate\Support\Facades\Session::get('cart')->totalQty:''}}</span></a> </li>
                             </ul>
                         </div>
                     </div>

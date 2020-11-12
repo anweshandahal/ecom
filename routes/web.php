@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('website.frontend.layouts.main');
-});
-Route::get('/new-login', function () {
-    return view('newlogin');
-});
+//Route::get('/', function () {
+//    return view('website.frontend.layouts.main');
+//});
+//Route::get('/new-login', function () {
+//    return view('newlogin');
+//});
 
 Auth::routes();
+Route::get('/', 'FrontendController@index')->name('website.index');
+Route::get('/add-to-cart/{id}', 'FrontendController@addToCart')->name('website.addCart');
+Route::get('/shopping-cart', 'FrontendController@getCart')->name('website.cart');
+Route::get('/checkout-cart', 'FrontendController@getCheckout')->name('website.checkout');
+Route::post('/checkout-cart', 'FrontendController@storeOrder')->name('website.storeOrder');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard','DashboardController@index')->name('dashbord.index');
