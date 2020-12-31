@@ -28,7 +28,7 @@ Route::get('/checkout-cart', 'FrontendController@getCheckout')->name('website.ch
 Route::post('/checkout-cart', 'FrontendController@storeOrder')->name('website.storeOrder');
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/dashboard','DashboardController@index')->name('dashbord.index');
+Route::get('/dashboard','DashboardController@index')->name('dashboard');
 Route::resource('/dashboard/product_category','ProductCategoryController');
 Route::resource('/dashboard/product','ProductController');
 Route::resource('/dashboard/productImage','ProductImageController');
@@ -36,4 +36,7 @@ Route::resource('/dashboard/customerDetail','CustomerDetailController');
 Route::resource('/dashboard/payment','PaymentController');
 Route::resource('/dashboard/contact','ProductImageController');
 Route::resource('/dashboard/contactForm','ProductImageController');
+
+Route::get('/contact', 'ContactController@index')->name('contact');
+
 
